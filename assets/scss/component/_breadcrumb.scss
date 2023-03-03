@@ -1,0 +1,31 @@
+@use "../global" as g;
+
+#breadcrumb {
+  padding: 20px 0;
+  @include g.mq(md) {
+    padding: 10px 0;
+  }
+  ul {
+    position: relative;
+    li {
+      display: inline;
+      color: #000;
+      font-size: 12px;
+      a {
+        color: #aaa;
+      }
+      & + li::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin: 0 10px;
+        border-bottom: solid 1px #000;
+        border-left: solid 1px #000;
+        color: #000;
+        vertical-align: middle;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}

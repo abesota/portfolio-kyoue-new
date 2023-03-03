@@ -1,0 +1,145 @@
+@use "../global" as g;
+
+#header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  padding: 50px 20px;
+  background-color: #f2fbff;
+  z-index: 999;
+  @include g.mq(md) {
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    padding-right: 13px;
+  }
+}
+
+#header-logo {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  left: 20px;
+  @include g.mq(md) {
+    top: 10px;
+    left: 20px;
+    right: auto;
+  }
+  a {
+    display: block;
+  }
+  img {
+    @include g.mq(md) {
+      width: auto;
+      height: 30px;
+    }
+  }
+}
+
+.navi-toggle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  background-color: inherit;
+  transform: translate(-50%,-50%) rotate(90deg);
+  overflow: hidden;
+  cursor: pointer;
+  @include g.mq(md) {
+    top: 50%;
+    left: auto;
+    right: 0px;
+    width: 26px;
+    height: 26px;
+  }
+
+  span {
+    display: block; 
+    position: absolute; 
+    top: 50%; 
+    width: 2px; 
+    height: 46px; 
+    color: transparent;
+    background-color: #333; 
+    transition: 0.5s;
+    transform: translateY(-50%) scale(1);
+    transform-origin: center center;
+    @include g.mq(md) {
+      height: 26px;
+    }
+    &:nth-child(1) {
+      left: 17px; 
+      transform: translate(0,-50%) scale(1);
+      @include g.mq(md) {
+        left: 9px;
+      }
+    }
+    &:nth-child(2) {
+      right: 17px; 
+      transform: translate(0,-50%) scale(1);
+      @include g.mq(md) {
+        right: 9px;
+      }
+    }
+  }
+
+  i {
+    display: block;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 46px;
+    color: transparent;
+    background-color: #333;
+    opacity: 0;
+    transition: 0.5s;
+    transform: scale(0);
+    transform-origin: center center;
+    @include g.mq(md) {
+      height: 26px;
+    }
+    &:nth-of-type(1) {
+      transform: translate(-50%,-50%) rotate(-135deg) scale(0);
+      transform-origin: center center;
+    }
+    &:nth-of-type(2) {
+      transform: translate(-50%,-50%) rotate(135deg) scale(0);
+      transform-origin: center center;
+    }
+  }
+
+  &.is-active {
+    span {
+      opacity:0;
+      &:nth-child(1) {
+        transform:translate(17px,-50%) scale(0);
+        @include g.mq(md) {
+          transform:translate(9px,-50%) scale(0);
+        }
+      }
+      &:nth-child(2) {
+        transform:translate(-17px,-50%) scale(0);
+        @include g.mq(md) {
+          transform:translate(-9px,-50%) scale(0);
+        }
+      }
+    }
+    i { 
+      opacity:1;
+      &:nth-of-type(1) {
+        transform:translate(-50%,-50%) rotate(-135deg) scale(1);
+      }
+      &:nth-of-type(2) {
+        transform:translate(-50%,-50%) rotate(135deg) scale(1);
+      }
+    }
+  }
+}

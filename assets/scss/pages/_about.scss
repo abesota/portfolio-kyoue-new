@@ -1,0 +1,63 @@
+@use "../global" as g;
+
+#page-about {
+  .page-title {
+    background-image: url("/assets/img/about/bg-page-title.jpg");
+  }
+  #company {
+    &.section {
+      padding: 80px 0;
+      @include g.mq(md) {
+        padding: 40px 0;
+      }
+    }
+    .table-02 {
+      a {
+        line-height: 2;
+      }
+    }
+  }
+  #principle {
+    &.section {
+      padding: 80px 0;
+      background-color: #f2f2f2;
+      @include g.mq(md) {
+        padding: 40px 0 60px;
+      }
+    }
+    .caption {
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      font-family: g.$font-serif;
+      @include g.mq(md) {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+    .image-box {
+      margin: 60px 0 80px;
+      text-align: center;
+      @include g.mq(md) {
+        margin: 20px 0 40px;
+      }
+    }
+    .box-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 50px 0;
+      counter-reset: number 0;
+      .item {
+        padding: 50px 20px;
+        background: #f2fbff;
+        text-align: center;
+        @include g.mq(md) {
+          padding: 20px;
+        }
+        p {
+          line-height: 2;
+        }
+      }
+    }
+  }
+}

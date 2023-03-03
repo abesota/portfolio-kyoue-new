@@ -1,0 +1,127 @@
+@use "../global" as g;
+
+#page-history {
+  .page-title {
+    background-image: url("/assets/img/history/bg-page-title.jpg");
+  }
+  #history {
+    &.section {
+      padding: 60px 0 80px;
+      @include g.mq(md) {
+        padding: 30px 0 40px;
+      }
+    }
+    .contents {
+      display: flex;
+      flex-direction: column;
+      gap: 60px 0;
+      position: relative;
+      width: 100%;
+      @include g.mq(md) {
+        gap: 20px 0;
+      }
+      
+      &::before {
+        content: "";
+        position: absolute;
+        top: 21.5px;
+        bottom: 21.5px;
+        left: 244px;
+        width: 1px;
+        background-color: #111;
+        @include g.mq(md) {
+          top: 12.5px;
+          left: 72px;
+          height: calc(100% - 60px);
+        }
+      }
+    }
+    .item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: relative;
+      @include g.mq(md) {
+        height: 65px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 21.5px;
+        left: 240px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: #111;
+        @include g.mq(md) {
+          top: 12.5px;
+          left: 70px;
+          width: 5px;
+          height: 5px;
+        }
+      }
+      i {
+        display: block;
+        position: relative;
+        width: 150px;
+        height: 50px;
+        padding: 15px 10px;
+        background: #000;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        @include g.mq(md) {
+          flex-shrink: 0;
+          width: 60px;
+          height: 30px;
+          padding: 10px 4px;
+          font-size: 12px;
+        }
+      }
+      ul {
+        width: 650px;
+        height: 50px;
+        padding: 14px 0 0 0;
+        line-height: 1.6;
+        @include g.mq(md) {
+          width: 100%;
+          height: auto;
+          margin: 0 0 0 25px;
+          padding: 7px 0 0 0;
+          line-height: 1.4;
+        }
+      }
+      li {
+        position: relative;
+        padding: 0 0 0 4em;
+        @include g.mq(md) {
+          padding: 0 0 0 3.5em;
+          text-align: left;
+        }
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: calc(4em - 10px);
+          padding: 0 10px 0 0;
+          text-align: right;
+          @include g.mq(md) {
+            width: calc(3.5em - 5px);
+            padding: 0 5px 0 0;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 1px;
+            height: 1em;
+            margin: auto 0;
+            background-color: #999;
+          }
+        }
+      }
+    }
+  }
+}

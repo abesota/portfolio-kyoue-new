@@ -1,0 +1,60 @@
+@use "../global" as g;
+
+.table-01 {
+  width: 100%;
+  th,
+  td {
+    padding: 20px 10px;
+    line-height: 1.6;
+    border-bottom: 1px solid #ccc;
+    @include g.mq(md) {
+      padding: 10px 0;
+    }
+  }
+
+  th {
+    width: 40%;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    @include g.mq(md) {
+      width: 20%;
+    }
+  }
+
+  td {
+    width: 60%;
+    @include g.mq(md) {
+      width: 80%;
+    }
+  }
+}
+
+.table-02 {
+  width: 100%;
+  th, 
+  td {
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc;
+    line-height: 1.6;
+    @include g.mq(md) {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+  th {
+    width: 180px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    @include g.mq(md) {
+      width: 100%;
+    }
+  }
+  td {
+    @include g.mq(md) {
+      border-bottom: none;
+    }
+  }
+}

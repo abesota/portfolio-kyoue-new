@@ -1,0 +1,95 @@
+@use "../global" as g;
+
+#header-navi {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 100px;
+  width: 390px;
+  background-color: #f2f2f2;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: 0.5s;
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+  -webkit-transform: translateX(-50px);
+  transform: translateX(-50px);
+  z-index: 998;
+  @include g.mq(md) {
+    top: 50px;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    background-color: transparent;
+    pointer-events: none;
+  }
+  &.is-active {
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+    @include g.mq(md) {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  ul {
+    padding: 60px 0;
+    @include g.mq(md) {
+      padding: 20px 0;
+      background-color: #f2f2f2;
+      pointer-events: auto;
+    }
+    
+  }
+  li {
+    a {
+      display: block;
+      padding: 30px 40px 32px;
+      color: #666;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      @include g.mq(md) {
+        padding: 15px 0;
+        font-size: 14px;
+        text-align: center;
+      }
+      &:hover {
+        background-color: #dfdfdf;
+      }
+      i {
+        display: block;
+        margin: 0 0 10px 0;
+        color: #333;
+        font-size: 32px;
+        letter-spacing: 0.05em;
+        @include g.mq(md) {
+          margin: 0 0 7px 0;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 997;
+  &:hover {
+    cursor: pointer;
+  }
+}

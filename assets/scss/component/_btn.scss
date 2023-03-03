@@ -1,0 +1,28 @@
+@use "../global" as g;
+
+.more-btn {
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    height: 40px;
+    border: 1px solid #111;
+    background-color: #111;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    transition: 0.2s ease-out;
+    -webkit-transition-property: background-color, color;
+    transition-property: background-color, color;
+    &:hover {
+      background-color: #fff;
+      color: #111;
+    }
+    @include g.mq(md) {
+      min-width: 220px;
+    }
+  }
+}
+

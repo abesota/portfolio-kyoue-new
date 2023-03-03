@@ -1,0 +1,153 @@
+@use "../global" as g;
+
+#page-equipment {
+  .page-title {
+    background-image: url("/assets/img/equipment/bg-page-title.jpg");
+  }
+  #equipment {
+    &.section {
+      padding: 60px 0 80px;
+      @include g.mq(md) {
+        padding: 30px 0 60px;
+      }
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 60px 0;
+      @include g.mq(md) {
+        gap: 20px 0;
+      }
+    }
+    .box {
+      padding: 40px;
+      @include g.mq(md) {
+        padding: 30px 20px 20px;
+      }
+      img {
+        @include g.mq(md) {
+          width: 100%;
+        }
+      }
+      th {
+        width: 50%;
+        @include g.mq(md) {
+          width: 40%;
+        }
+      }
+      td {
+        width: 50%;
+        @include g.mq(md) {
+          width: 60%;
+        }
+      }
+      &.-blue {
+        background-color: #f2fbff;
+        .contents-head {
+          display: flex;
+          justify-content: space-between;
+          // margin: 0 0 10px 0;
+          margin: 0 0 40px 0;
+          @include g.mq(md) {
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0 0 20px 0;
+          }
+          .description {
+            width: 490px;
+            @include g.mq(md) {
+              width: 100%;
+            }
+          }
+          h3 {
+            position: relative;
+            padding: 20px 0;
+            margin: 0 0 20px 0;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.5;
+            @include g.mq(md) {
+              font-size: 18px;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 120px;
+              height: 1px;
+              background-color: #ccc;
+            }
+          }
+          p {
+            line-height: 1.6;
+          }
+        }
+
+        .contents-foot {
+          display: flex;
+          justify-content: space-between;
+          @include g.mq(md) {
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+          & + .contents-foot {
+            margin: 40px 0 0 0;
+          }
+          .item {
+            width: 49%;
+            @include g.mq(md) {
+              width: 100%;
+            }
+            & + .item {
+              @include g.mq(md) {
+                margin: 40px 0 0 0;
+              }
+            }
+          }
+          &.-sp-margin-none {
+            .item {
+              & + .item {
+                @include g.mq(md) {
+                  margin: 0px 0 0 0;
+                }
+              }
+            }
+          }
+          h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            @include g.mq(md) {
+              margin: 0 0 6px 0;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &.-gray {
+        background-color: #f2f2f2;
+        .contents {
+          display: flex;
+          justify-content: space-between;
+          @include g.mq(md) {
+            flex-direction: column;
+          }
+        }
+        .description {
+          width: 490px;
+          @include g.mq(md) {
+            width: 100%;
+            margin: 10px 0 0 0;
+          }
+        }
+        h2 {
+          text-align: left;
+          @include g.mq(md) {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

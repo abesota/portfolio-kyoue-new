@@ -1,0 +1,233 @@
+@use "../global" as g;
+
+#page-philosophy {
+  .page-title {
+    background-image: url("/assets/img/philosophy/bg-page-title.jpg");
+  }
+  #philosophy {
+    &.section {
+      padding: 80px 0;
+      @include g.mq(md) {
+        padding: 80px 0 95px;
+      }
+    }
+  }
+  #philosophy-policy {
+    &.section {
+      position: relative;
+      padding: 0 0 100px 0;
+      overflow: hidden;
+      z-index: 1;
+      @include g.mq(md) {
+        padding: 20px 0;
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        height: calc(100% - 60px);
+        margin: 60px 0 0 -182px;
+        background-color: #f2fbff;
+        z-index: -1;
+        @include g.mq(md) {
+          top: 0;
+          left: 80%;
+          height: 100%;
+          margin-top: 0;
+        }
+      }
+    }
+    h3 {
+      @include g.mq(md) {
+        margin: 20px 0 0 0;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 60px 0;
+      @include g.mq(md) {
+        gap: 28px 0;
+      }
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0 40px;
+      @include g.mq(md) {
+        flex-direction: column;
+        gap: 0;
+      }
+      .image {
+        width: 480px;
+        @include g.mq(md) {
+          width: 100%;
+        }
+      }
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        @include g.mq(md) {
+          flex-direction: column;
+        }
+      }
+      .description {
+        width: calc(100% - 520px);
+        @include g.mq(md) {
+          width: 100%;
+        }
+      }
+      p {
+        margin: 20px 0 0 0;
+        font-size: 14px;
+        line-height: 1.6;
+        @include g.mq(md) {
+          margin: 14px 0 0 0;
+        }
+      }
+      dl {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        margin: 20px 0 0 0;
+      }
+      dt {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1;
+      }
+      dd {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  #philosophy-quality {
+    &.section {
+      @include g.mq(md) {
+        margin: 40px 0 0 0;
+      }
+    }
+    .contents {
+      position: relative;
+      padding: 0 0 100px 0;
+      overflow: hidden;
+      z-index: 1;
+      @include g.mq(md) {
+        padding: 20px 0 20px;
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - 60px);
+        margin: 0 -182px 0 0;
+        background-color: #f2f2f2;
+        z-index: -1;
+        @include g.mq(md) {
+          right: 80%;
+          height: 100%;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      @include g.mq(md) {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px 0;
+      }
+      &:first-of-type {
+        @include g.mq(md) {
+          display: none;
+        }
+      }
+      &:nth-of-type(2) {
+        display: none;
+        @include g.mq(md) {
+          display: flex;
+        }
+      }
+    }
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      width: 310px;
+      height: 350px;
+      padding: 30px 30px 32px;
+      text-align: center;
+      background-color: #333;
+      @include g.mq(md) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: 180px;
+        padding: 22px 20px 20px;
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        margin: auto;
+        border: 1px solid #fff;
+        @include g.mq(md) {
+          width: calc(100% - 10px);
+          height: calc(100% - 10px);
+        }
+      }
+      h3 {
+        margin: 0 0 40px 0;
+        color: #fff;
+        font-size: 28px;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        @include g.mq(md) {
+          margin: 0 0 12px 0;
+          font-size: 18px;
+          text-align: left;
+        }
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 93px;
+        margin: 30px auto 0;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+        @include g.mq(md) {
+          display: block;
+          height: auto;
+          margin: 0 auto;
+          font-size: 12px;
+        }
+      }
+      img {
+        max-width: fit-content;
+        margin: 0 auto;
+        @include g.mq(md) {
+          width: 40px;
+          margin: 0 28px 0 0;
+        }
+      }
+    }
+  }
+}

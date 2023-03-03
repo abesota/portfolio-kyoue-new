@@ -1,0 +1,36 @@
+@use "../global" as g;
+
+#main {
+  min-width: 1080px;
+  @include g.mq(md) {
+    min-width: auto;
+  }
+}
+
+.section {
+ width: 100%;
+}
+
+.inner {
+  width: 1000px;
+  padding: 0;
+  margin: 0 auto;
+  @include g.mq(md) {
+    width: auto;
+    padding: 0 20px;
+  }
+}
+
+.contents-width {
+  width: 1000px;
+  padding: 0;
+  margin: 0 auto;
+  @include g.mq(md) {
+    width: auto;
+    padding: 0 20px;
+  }
+}
+
+@include g.mq(md) {
+  
+}

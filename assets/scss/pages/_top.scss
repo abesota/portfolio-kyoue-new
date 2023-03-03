@@ -1,0 +1,389 @@
+@use "../global" as g;
+
+#page-index {
+  #branding {
+    &.section {
+      height: 100vh;
+      min-height: 600px;
+      padding: 13.88889vh 6.25vw;
+      background-image: url("/assets/img/top/branding.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include g.mq(md) {
+        height: auto;
+        min-height: 400px;
+        padding: 75px 20px;
+        background-image: url("/assets/img/top/sp/branding.jpg");
+      }
+    }
+
+    .inner {
+      position: relative;
+      width: auto;
+      height: 100%;
+      padding-left: 5.20833vw;
+      @include g.mq(md) {
+        padding: 0;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: #fff;
+        @include g.mq(md) {
+          content: none;
+        }
+      }
+      h1 {
+        color: #fff;
+        font-size: 66px;
+        font-weight: normal;
+        letter-spacing: 0.2em;
+        line-height: 1.36;
+        font-family: g.$font-en;
+        @include g.mq(md) {
+          font-size: 38px;
+        }
+      }
+      .text {
+        margin: 30px 0 0 0;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        line-height: 2;
+        @include g.mq(md) {
+          margin-top: 15px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  #about {
+    &.section {
+      padding: 75px 0 80px;
+      background-color: #f2fbff;
+      @include g.mq(md) {
+        padding: 35px 0;
+      }
+    }
+    // .inner {
+    //   @include g.mq(md) {
+    //     padding: 0 0 20px 0;
+    //   }
+    // }
+    .contents {
+      display: flex;
+      align-items: center;
+      @include g.mq(md) {
+        flex-direction: column;
+      }
+      .image {
+        width: 450px;
+        @include g.mq(md) {
+          width: 100%;
+        }
+      }
+      .wrap {
+        flex-shrink: 0;
+        padding: 0 0 0 40px;
+        @include g.mq(md) {
+          width: 100%;
+          padding: 0 0 0 0;
+          margin: 25px 0 0 0;
+        }
+      }
+      h3 {
+        font-size: 40px;
+        line-height: 1.6;
+        @include g.mq(md) {
+          font-size: 23px;
+          text-align: left;
+        }
+      }
+      .more-btn {
+        margin: 30px 0 0 0;
+        @include g.mq(md) {
+          margin: 25px 0 0 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #equipment {
+    &.section {
+      padding: 75px 0 0 0;
+      @include g.mq(md) {
+        padding: 20px 0 30px;
+      }
+    }
+    ul {
+      display: flex;
+      @include g.mq(md) {
+        flex-direction: column;
+      }
+      li {
+        width: 33.3333%;
+        @include g.mq(md) {
+          width: 100%;
+        }
+      }
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 420px;
+        color: #fff;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-shadow: 0 0 4px rgb(0 0 0 / 80%);
+        z-index: 0;
+        @include g.mq(md) {
+          height: 210px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          pointer-events: none;
+          transition: opacity 0.2s ease-out;
+          z-index: -1;
+        }
+        &:hover::before {
+          opacity: 0;
+        }
+        &.bg-01 {
+          background-image: url("/assets/img/top/equipment-01.jpg");
+        }
+        &.bg-02 {
+          background-image: url("/assets/img/top/equipment-02.jpg");
+        }
+        &.bg-03 {
+          background-image: url("/assets/img/top/equipment-03.jpg");
+        }
+      }
+      h3 {
+        font-weight: normal;
+        i {
+          margin: 0 0 20px 0;
+          font-size: 24px;
+          text-align: center;
+          @include g.mq(md) {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  #philosophy {
+    &.section {
+      padding: 80px 0;
+      @include g.mq(md) {
+        padding: 30px 0;
+      }
+    }
+    .item {
+      padding: 85px 0;
+      position: relative;
+      @include g.mq(md) {
+        padding: 145px 0 0;
+      }
+      & + .item {
+        margin: 80px 0 0 0;
+        @include g.mq(md) {
+          margin: 30px 0 0;
+        }
+      }
+
+      &::before {
+        // widthとheightの指定が必要
+        content: "";
+        display: block;
+        position: absolute;
+        width: 940px;
+        height: 420px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        @include g.mq(md) {
+          width: 100%;
+          height: 300px;
+        }
+      }
+
+      &-01 {
+        .inner {
+          @include g.mq(md) {
+            padding: 0 0 0 20px;
+          }
+        }
+        &::before {
+          top: 0;
+          right: 0;
+          background-image: url("/assets/img/top/philosophy-01.jpg");
+          @include g.mq(md) {
+            background-image: url("/assets/img/top/sp/philosophy-01.jpg");
+          }
+        }
+      }
+      &-02 {
+        .inner {
+          @include g.mq(md) {
+            padding: 0 20px 0 0;
+          }
+        }
+        &::before {
+          top: 0;
+          left: 0;
+          background-image: url("/assets/img/top/philosophy-02.jpg");
+          @include g.mq(md) {
+            background-image: url("/assets/img/top/sp/philosophy-02.jpg");
+          }
+        }
+      }
+      .box {
+        background-color: #f2fbff;
+        width: 640px;
+        padding: 45px 50px 50px;
+        @include g.mq(md) {
+          width: auto;
+          padding: 25px 20px 30px;
+        }
+      }
+      &-02 .box {
+        margin: 0 0 0 auto;
+      }
+      h3 {
+        i {
+          margin: 0 0 7px 0;
+          padding: 0 0 0 0.2em;
+          font-size: 16px;
+          @include g.mq(md) {
+            margin: 0 0 2px 0;
+            padding: 0;
+          }
+        }
+      }
+      .more-btn {
+        margin: 40px 0 0 0;
+        @include g.mq(md) {
+          padding: 0 10px;
+          margin: 20px 0 0 0;
+        }
+        a {
+          @include g.mq(md) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #base {
+    &.section {
+      padding: 80px 0;
+      @include g.mq(md) {
+        padding: 30px 0 60px;
+      }
+    }
+    .contents {
+      display: flex;
+      align-items: center;
+      @include g.mq(md) {
+        flex-direction: column;
+      }
+      .image {
+        width: 500px;
+        @include g.mq(md) {
+          width: 100%;
+          padding: 0 15px;
+        }
+      }
+      .wrap {
+        flex-shrink: 0;
+        padding: 0 0 0 30px;
+        @include g.mq(md) {
+          margin: 20px 0 0 0;
+        }
+      }
+      h3 {
+        @include g.mq(md) {
+          text-align: center;
+        }
+        span {
+          font-size: 26px;
+          @include g.mq(md) {
+            font-size: 16px;
+          }
+        }
+      }
+      .more-btn {
+        margin: 35px 0 0 0;
+        @include g.mq(md) {
+          margin: 30px 0 0 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #history {
+    &.section {
+      padding: 75px 0;
+      background-image: url("/assets/img/top/history.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include g.mq(md) {
+        padding: 50px 0;
+        background-image: url("/assets/img/top/sp/history.jpg");
+      }
+    }
+    .wrap {
+      text-align: center;
+      @include g.mq(md) {
+        text-align: left;
+      }
+    }
+    h3 {
+      font-size: 30px;
+      @include g.mq(md) {
+        font-size: 20px;
+      }
+    }
+    .more-btn {
+      margin: 40px 0 0 0;
+      @include g.mq(md) {
+        margin: 25px 0 0 0;
+        text-align: center;
+      }
+    }
+  }
+
+  #recruit {
+    &.section {
+      padding: 60px 0;
+    }
+    .bnr {
+      display: inline-block;
+      transition: opacity 0.2s ease-out;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

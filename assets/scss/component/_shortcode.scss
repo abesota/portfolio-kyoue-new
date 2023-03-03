@@ -1,0 +1,47 @@
+@use "../global" as g;
+
+.pc {
+	display:block !important;
+	@include g.mq(md) {
+		display: none !important;
+	}
+}
+
+.tb { 
+	display:none;
+}
+
+.sp {
+	display:none !important;
+	@include g.mq(md) {
+		display: block !important;
+	}
+}
+
+
+// フォントサイズ・スタイルの定義
+
+.en {
+	font-family: g.$font-en;
+}
+
+.serif {
+	font-family: g.$font-serif;
+}
+
+
+
+
+.style-normal {
+	font-weight: normal;
+}
+.style-bold {
+	font-weight: bold;
+}
+.style-yellow {
+	color: g.$yellow;
+}
+.style-white {
+	color: #fff;
+}
+

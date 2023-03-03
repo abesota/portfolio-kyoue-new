@@ -1,0 +1,22 @@
+@use "../global" as g;
+
+.icon-tab {
+  display: block;
+  position: relative;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 8px -1px;
+    background-image: url("/assets/img/common/icon-tab.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    @include g.mq(md) {
+      width: 10px;
+      height: 10px;
+      margin: 0 6px -1px;
+    }
+  }
+}

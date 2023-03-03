@@ -1,0 +1,30 @@
+@use "../global" as g;
+
+#pagetop {
+  z-index: 19;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  // position: absolute;
+  // right: 0;
+  // bottom: 100%;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    @include g.mq(md) {
+      width: 45px;
+      height: 45px;
+    }
+    &::before {
+      content: '';
+      width: 16px;
+      height: 10px;
+      background-image: url("/assets/img/common/icon-arrow-top.svg");
+      background-repeat: no-repeat;
+    }
+  }
+}

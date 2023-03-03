@@ -1,0 +1,155 @@
+@use "../global" as g;
+
+#footer {
+  position: relative;
+  background-color: #111;
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    @include g.mq(md) {
+      display: block;
+      padding: 40px 20px;
+    }
+  }
+}
+
+#footer-logo {
+  @include g.mq(md) {
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+  a {
+    display: inline-block;
+    @include g.mq(md) {
+      width: 53px;
+    }
+  }
+  .address {
+    margin: 20px 0 0 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.61;
+    letter-spacing: 0.1em;
+  }
+}
+
+#footer-navi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @include g.mq(md) {
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    gap: 0 10px;
+    @include g.mq(md) {
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+    li {
+      @include g.mq(md) {
+        
+      }
+    }
+    a {
+      display: block;
+      position: relative;
+      padding: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      @include g.mq(md) {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        -webkit-transition: width 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+        transition: width 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+        @include g.mq(md) {
+          content: none;
+        }
+      }
+      &:hover {
+        &::after {
+          right: auto;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .contact {
+    display: flex;
+    gap: 0 20px;
+    margin: 38px 0 0 0;
+    .number {
+      display: block;
+      position: relative;
+      padding: 2px 0 2px 31px;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      z-index: 0;
+      @include g.mq(md) {
+        padding-left: 18px;
+        font-size: 14px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
+      &.--tel::before {
+        width: 20px;
+        height: 20px;
+        background-image: url("/assets/img/common/icon-tel.svg");
+        @include g.mq(md) {
+          width: 13px;
+          height: 13px;
+        }
+      }
+      &.--fax::before {
+        width: 22px;
+        height: 18px;
+        background-image: url("/assets/img/common/icon-fax.svg");
+        @include g.mq(md) {
+          width: 13px;
+          height: 11px;
+        }
+      }
+    }
+  }
+}
+
+#copyright {
+  padding: 15px 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: center;
+  background-color: #333;
+  @include g.mq(md) {
+    padding: 10px 0;
+    font-size: 10px;
+  }
+}
